@@ -1,0 +1,42 @@
+<ion-accordion-group *ngFor="let e of devices; let i=index">
+  <ion-accordion value="first">
+    <ion-item id="{{e.id}}" slot="header" color="light">
+      <ion-label>{{e.name}}</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+
+      <table style="width: 100%;">
+        <tr>
+          <td style="padding-left: 20px; width: 60%;">
+            <table style="width: 70%; ">
+              <tr>
+                <td>Id Sensor</td>
+                <td>{{e.id}}</td>
+              </tr>
+              <tr>
+                <td>Estado Sensor</td>
+                <td>{{e.state}}</td>
+              </tr>
+              <tr>
+                <td>Fecha Ultima lectura</td>
+                <td>{{e.lastReadingDate }}</td>
+              </tr>
+              <tr>
+                <td >Ultima lectura</td>
+                <td>{{e.lastReadingValue}}</td>
+              </tr>
+              <tr>
+                <td>Ubicacion</td>
+                <td>{{e.location}}</td>
+              </tr>
+              <tr>
+                <td>Electrovalvula</td>
+                <td>{{e.valveName}}</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </ion-accordion>
+</ion-accordion-group>

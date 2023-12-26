@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+
+    fullstack-project-frontend:
+      build:
+        context: ./frontend
+      ports:
+        - "8100:8100"
+      container_name: fullstack-project-frontend
+      volumes:
+        - ./frontend:/src/frontend
+        - /frontend/node_modules
+      command: ionic serve --external
+
+    fullstack-project-backend:
+      image: abassi/nodejs-server:10.0-dev
+      container_name: fullstack-project-backend
+      volumes:
+        - ./backend:/home/node/app/src
+      ports: 
+        - "8000:3000"
+      command: nodemon /home/node/app/src/app.mjs
